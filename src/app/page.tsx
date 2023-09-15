@@ -1,9 +1,12 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import styles from "./page.module.css";
 import { generateText } from "./ai-api/huggingface";
 
+
 import Header from "./components/header/header";
+import AvatarAppIntro from "./components/avatarAppIntro/avatarAppIntro";
 
 export default function Home() {
 	const [ingredients, setIngredients] = useState("");
@@ -93,7 +96,7 @@ export default function Home() {
 					)}
 				</>
 			)}
-			{/* Content goes here */}
+			<AvatarAppIntro />
 		</main>
 	);
 }
