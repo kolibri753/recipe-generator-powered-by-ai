@@ -3,6 +3,8 @@
 import React, { useEffect, useState } from "react";
 import { generateText } from "./ai-api/huggingface";
 
+import Header from "./components/header/header";
+
 export default function Home() {
 	const [ingredients, setIngredients] = useState("");
 	const [generatedText, setGeneratedText] = useState("");
@@ -10,7 +12,7 @@ export default function Home() {
 	const [showContinueButton, setShowContinueButton] = useState(true);
 	const [isLoading, setIsLoading] = useState(false); // Add loading state
 
-	const handleSubmit = async (e: { preventDefault: () => void; }) => {
+	const handleSubmit = async (e: { preventDefault: () => void }) => {
 		e.preventDefault();
 		setIsLoading(true); // Set loading to true when submitting
 		if (ingredients) {
@@ -64,6 +66,7 @@ export default function Home() {
 
 	return (
 		<main>
+			<Header />
 			<h1>Recipe Generator Powered by AI</h1>
 			<form onSubmit={handleSubmit}>
 				<label>
