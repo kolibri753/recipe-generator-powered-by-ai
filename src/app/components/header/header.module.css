@@ -1,0 +1,26 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: var(--light-grey); */
+  padding: 0px 15px;
+  /* color: var(--dark-grey); */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo__text {
+  font-size: 24px;
+}
+
+.themeChanger {
+  background-color: var(--dark-grey);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
