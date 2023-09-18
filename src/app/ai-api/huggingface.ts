@@ -6,7 +6,7 @@ export async function generateText(ingredients: string, continuation: string = "
   try {
     const response = await hf.textGeneration({
       model: "gpt2",
-      inputs: `Generate a recipe using the following ingredients: ${ingredients}\n${continuation}`,
+      inputs: `Generate a recipe using the following ingredients: ${ingredients}, \n${continuation}`,
       parameters: { max_new_tokens: 250 },
     });
 

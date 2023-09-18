@@ -1,7 +1,7 @@
 .middle {
   display: flex;
   gap: 15px;
-  height: 550px;
+  min-height: 550px;
   /* justify-content: space-between; */
   justify-content: center;
 }
