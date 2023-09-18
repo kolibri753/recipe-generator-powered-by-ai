@@ -2,11 +2,11 @@
 
 import React, { useEffect, useState } from "react";
 import styles from "./page.module.css";
-import { generateText } from "./ai-api/huggingface";
-
-
 import Header from "./components/header/header";
 import AvatarAppIntro from "./components/avatarAppIntro/avatarAppIntro";
+import Recipe from "./components/recipe/recipe";
+
+import { generateText } from "./ai-api/huggingface";
 
 export default function Home() {
 	const [ingredients, setIngredients] = useState("");
@@ -70,7 +70,6 @@ export default function Home() {
 	return (
 		<main>
 			<Header />
-			<h1>Recipe Generator Powered by AI</h1>
 			<form onSubmit={handleSubmit}>
 				<label>
 					Enter Ingredients:
@@ -96,7 +95,10 @@ export default function Home() {
 					)}
 				</>
 			)}
-			<AvatarAppIntro />
+			<section className={styles.middle}>
+				<AvatarAppIntro />
+				<Recipe />
+			</section>
 		</main>
 	);
 }
