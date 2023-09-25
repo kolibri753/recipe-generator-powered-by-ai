@@ -26,9 +26,17 @@
 	z-index: -1;
 }
 
+.recipe__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
 .recipe__title {
 	text-align: center;
 	margin-bottom: 10px;
+	font-size: 24px;
+	border-bottom: 5px solid var(--green);
 }
 
 .recipe__desc {
@@ -59,8 +67,8 @@
 }
 
 .recipe__button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  background-color: var(--brown);
-  color: var(--dark-grey);
+	opacity: 0.6;
+	cursor: not-allowed;
+	background-color: var(--brown);
+	color: var(--dark-grey);
 }
