@@ -7,7 +7,8 @@ import avatar from "/public/images/avocado.png";
 const AvatarAppIntro = () => {
 	// State to control the typing animation
 	const [typedText, setTypedText] = useState("");
-	const introText = "Welcome to FoodieMate AI! I'm your friendly kitchen companion here to help you explore a world of delightful recipes. Let's embark on a delicious journey together!";
+	const introText =
+		"Welcome to FoodieMate AI! I'm your friendly kitchen companion here to help you explore a world of delightful recipes. Let's embark on a delicious journey together!";
 
 	useEffect(() => {
 		const typeText = () => {
@@ -33,11 +34,19 @@ const AvatarAppIntro = () => {
 
 	return (
 		<div className={styles.avatar}>
-			<div className={[styles.avatar__textContainer, styles.avatar__thinking].join("")}>
+			<div
+				className={[styles.avatar__textContainer, styles.avatar__thinking].join("")}
+			>
 				<p className={styles.avatar__text}>{typedText}</p>
 			</div>
 			<div className={styles.avatar__imageContainer}>
-				<Image className={styles.avatar__image} src={avatar} alt="Cool Avocado" width={350} height={400}/>
+				<Image
+					className={[styles.avatar__image, "non-draggable-img"].join(" ")}
+					src={avatar}
+					alt="Cool Avocado"
+					width={350}
+					height={400}
+				/>
 			</div>
 		</div>
 	);

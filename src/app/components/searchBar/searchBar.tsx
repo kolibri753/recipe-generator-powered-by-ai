@@ -26,9 +26,10 @@ function SearchBar({
 				Enter Ingredients:
 				<input
 					className={styles.searchBar__input}
-					type="text"
+					type="search"
 					value={ingredients}
-          size={100}
+					size={100}
+					placeholder="Write what you have in the fridge here..."
 					onChange={(e) => onIngredientsChange(e.target.value)}
 				/>
 			</label>

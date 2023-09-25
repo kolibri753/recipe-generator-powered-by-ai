@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import styles from "./page.module.css";
-import Header from "./components/header/header";
 import AvatarAppIntro from "./components/avatarAppIntro/avatarAppIntro";
 import Recipe from "./components/recipe/recipe";
 import SearchBar from "./components/searchBar/searchBar";
@@ -56,7 +55,6 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      <Header />
       <SearchBar
         ingredients={ingredients}
         onIngredientsChange={setIngredients}

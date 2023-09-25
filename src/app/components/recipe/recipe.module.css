@@ -9,6 +9,7 @@
 	border: 5px solid var(--green);
 	border-radius: 15px;
 	position: relative;
+	margin-bottom: 15px;
 }
 
 .recipe::after {

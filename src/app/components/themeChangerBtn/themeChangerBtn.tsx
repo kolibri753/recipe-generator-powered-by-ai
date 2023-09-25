@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useEffect, useState } from "react";
 import styles from "./themeChangerBtn.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

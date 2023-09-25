@@ -14,7 +14,7 @@ const Header = () => {
 					width={80}
 					height={80}
 					alt="Logo"
-					className={styles.logo__icon}
+					className="non-draggable-img"
 					style={{ objectFit: "contain" }}
 				/>
 				<span className={styles.logo__text}>FoodieMate AI</span>
