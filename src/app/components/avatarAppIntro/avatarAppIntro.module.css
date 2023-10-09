@@ -32,10 +32,43 @@
 	overflow: hidden;
 }
 
-.avatar__imageContainer {
-  
-}
+
 
 .avatar__image {
 	object-fit: contain;
+}
+
+@media (max-width: 964px) {
+	.avatar {
+		position: absolute;
+		top: 1em;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+
+@media (max-width: 530px) {
+	.avatar__image,
+	.avatar__textContainer {
+		width: 26.3em;
+	}
+
+	.avatar__image{
+		height: 29em;
+	}
+}
+
+@media (max-width: 450px) {
+  .avatar__image,
+	.avatar__textContainer {
+    width: 17.5em;
+  }
+
+	.avatar__textContainer {
+		height: 13em;
+  }
+
+	.avatar__image{
+		height: 21em;
+	}
 }

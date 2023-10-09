@@ -57,8 +57,8 @@ a {
 	-ms-user-select: none;
 }
 
-@media (prefers-color-scheme: dark) {
-	html {
-		color-scheme: dark;
-	}
+@media (max-width: 1060px) {
+  html {
+    font-size: 16px;
+  }
 }

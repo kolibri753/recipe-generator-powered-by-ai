@@ -44,3 +44,55 @@
 .button__icon {
   color: var(--text-color);
 }
+
+@media (max-width: 964px) {
+  .searchBar {
+    margin-top: 43em;
+    width: 45em;
+  }
+  
+  .searchBar__input {
+    width: 30em;
+  }
+}
+
+@media (max-width: 770px) {
+  .searchBar {
+    margin-top: 49em;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 650px) {
+  .searchBar {
+    width: 35em;
+  }
+
+  .searchBar__input {
+    width: 95%;
+  }
+}
+
+@media (max-width: 530px) {
+  .searchBar {
+    margin-top: 47em;
+    flex-direction: column;
+    gap: 0.8em;
+    width: 30em;
+  }
+
+  .searchBar__input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  .searchBar {
+    margin-top: 40em;
+    width: 20em;
+  }
+
+  .searchBar__input {
+    font-size: 0.9em;
+  }
+}

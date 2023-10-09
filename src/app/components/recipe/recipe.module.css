@@ -74,3 +74,26 @@
 	background-color: var(--brown);
 	color: var(--dark-grey);
 }
+
+@media (max-width: 1060px) {
+	.recipe {
+		min-height: 41em;
+	}
+}
+
+@media (max-width: 530px) {
+	.recipe {
+		width: 26.3em;
+		min-height: 23em;
+	}
+}
+
+@media (max-width: 450px) {
+	.recipe {
+		width: 17.5em;
+	}
+
+	.recipe__buttons {
+		font-size: 15px;
+	}
+}
