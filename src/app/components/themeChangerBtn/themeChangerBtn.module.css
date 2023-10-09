@@ -1,8 +1,8 @@
 .theme__switcher {
-  width: 60px;
-  height: 30px;
+  width: 4.2em;
+  height: 2.1em;
   background-color: var(--green);
-  border-radius: 30px;
+  border-radius: 2.1em;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -16,8 +16,8 @@
 }
 
 .theme__slider {
-  width: 30px;
-  height: 30px;
+  width: 2.1em;
+  height: 2.1em;
   background-color: var(--dark-grey);
   border: 1px solid var(--dark-grey);
   border-radius: 50%;
@@ -32,8 +32,8 @@
 }
 
 .theme__icon {
-  height: 18px;
-  width: 18px;
+  height: 1em;
+  width: 1em;
 }
 
 .darkMode .theme__switcher {
@@ -44,7 +44,7 @@
 .darkMode .theme__slider {
   background-color: var(--light-grey);
   color: var(--light-grey);
-  transform: translateX(30px);
+  transform: translateX(2.1em);
 }
 
 .darkMode .theme__icon {
