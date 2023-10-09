@@ -6,28 +6,28 @@
 .avatar__textContainer {
 	position: relative;
 	background-color: var(--green);
-	border-radius: 15px;
-	padding: 10px 20px;
+	border-radius: 1em;
+	padding: 1em;
 	/* width: 40%; */
-	width: 400px;
-	height: 150px;
+	width: 28em;
+	height: 10.5em;
 	/* text-align: justify; */
 }
 
 .avatar__text::after {
 	content: "";
 	position: absolute;
-	bottom: -10px;
-	left: 20px;
+	bottom: -0.45em;
+	left: 2em;
 	width: 0;
 	height: 0;
 	border-style: solid;
-	border-width: 10px 10px 0;
+	border-width: 0.5em 0.5em 0;
 	border-color: var(--green) transparent transparent transparent;
 }
 
 .avatar__text {
-	font-size: 18px;
+	font-size: 1.25em;
 	white-space: wrap;
 	overflow: hidden;
 }

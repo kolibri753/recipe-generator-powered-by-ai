@@ -57,7 +57,7 @@ const Recipe: React.FC<RecipeProps> = ({
 					{isLoading ? "Generating recipe..." : recipeText}
 				</p>
 			) : (
-				<p className={styles.recipe__desc} style={{ fontSize: "20px" }}>
+				<p className={styles.recipe__desc}>
 					Write down your favorite ingredients and click the Generate button, and
 					like magic, your custom recipe will appear right here! 🍳🧁✨
 				</p>

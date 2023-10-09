@@ -7,8 +7,8 @@
 
 .middle {
   display: flex;
-  gap: 15px;
-  min-height: 550px;
+  gap: 0.8em;
+  min-height: 38em;
   /* justify-content: space-between; */
   justify-content: center;
 }

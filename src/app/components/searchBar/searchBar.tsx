@@ -28,14 +28,14 @@ function SearchBar({
 					className={styles.searchBar__input}
 					type="search"
 					value={ingredients}
-					size={100}
+					size={80}
 					placeholder="Write what you have in the fridge here..."
 					onChange={(e) => onIngredientsChange(e.target.value)}
 				/>
 			</label>
 			<button type="submit" className={styles.searchBar__button}>
 				<span className={styles.button__text}>Generate Recipe</span>
-				<FontAwesomeIcon className={styles.button__icon} icon={faReceipt} />
+				<FontAwesomeIcon className={styles.button__icon} icon={faReceipt} size="2x"/>
 			</button>
 		</form>
 	);

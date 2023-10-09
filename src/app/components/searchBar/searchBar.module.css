@@ -2,12 +2,12 @@
   display: flex;
   align-self: center;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   background-color: var(--brown);
-  padding: 10px;
-  border-radius: 15px;
-  max-width: 815px;
-  margin: 15px 0;
+  padding: 0.8em;
+  border-radius: 1em;
+  width: 56.8em;
+  margin: 0.8em 0;
 }
 
 .searchBar__label {
@@ -15,29 +15,32 @@
 }
 
 .searchBar__input {
-  padding: 5px;
+  font-size: 1em;
+  padding: 0.5em;
   border: 1px solid var(--dark-grey);
-  border-radius: 10px;
+  border-radius: 0.8em;
 }
 
 .searchBar__button {
+  max-height: 3.3em;
+  font-size: 1em;
   background-color: var(--orange);
   color: var(--white);
-  padding: 5px 10px;
+  padding: 0.5em 1em;
   border: none;
-  border-radius: 10px;
+  border-radius: 0.8em;
   cursor: pointer;
   display: flex;
   align-items: center;
 }
 
 .button__text {
-  font-size: 16px;
-  margin-right: 5px;
+  text-align: left;
+  font-size: 1em;
+  margin-right: 0.5em;
   color: var(--text-color);
 }
 
 .button__icon {
-  font-size: 28px;
   color: var(--text-color);
 }

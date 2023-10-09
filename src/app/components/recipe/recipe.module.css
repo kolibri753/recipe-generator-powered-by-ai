@@ -1,15 +1,15 @@
 .recipe {
 	display: flex;
 	flex-direction: column;
-	width: 400px;
-	min-height: 550px;
-	padding: 20px;
+	width: 28em;
+	min-height: 38em;
+	padding: 1em;
 	align-self: center;
 	justify-self: center;
 	border: 5px solid var(--green);
-	border-radius: 15px;
+	border-radius: 1em;
 	position: relative;
-	margin-bottom: 15px;
+	margin-bottom: 1em;
 }
 
 .recipe::after {
@@ -34,31 +34,33 @@
 
 .recipe__title {
 	text-align: center;
-	margin-bottom: 10px;
-	font-size: 24px;
+	margin-bottom: 0.5em;
+	font-size: 1.6em;
 	border-bottom: 5px solid var(--green);
 }
 
 .recipe__desc {
 	flex-grow: 1;
 	text-align: justify;
+	font-size: 1.2em;
 }
 
 .recipe__buttons {
 	display: flex;
 	justify-content: space-between;
-	margin-top: 10px;
+	margin-top: 0.5em;
 }
 
 .recipe__button {
+	font-size: 1.2em;
 	display: flex;
 	align-items: center;
-	gap: 10px;
+	gap: 1em;
 	background-color: var(--green);
 	color: white;
-	padding: 10px;
+	padding: 0.5em;
 	border: none;
-	border-radius: 5px;
+	border-radius: 0.5em;
 	cursor: pointer;
 }
 
