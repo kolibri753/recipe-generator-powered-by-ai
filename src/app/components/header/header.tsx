@@ -8,7 +8,7 @@ import logo from "/public/images/logo.png";
 const Header = () => {
 	return (
 		<header className={styles.header}>
-			<div className={styles.logo}>
+			<a className={styles.logo} href="/">
 				<Image
 					src={logo}
 					width={80}
@@ -18,7 +18,7 @@ const Header = () => {
 					style={{ objectFit: "contain" }}
 				/>
 				<span className={styles.logo__text}>FoodieMate AI</span>
-			</div>
+			</a>
 			<ThemeChangerBtn />
 		</header>
 	);
