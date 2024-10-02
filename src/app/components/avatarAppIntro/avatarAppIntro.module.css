@@ -8,10 +8,8 @@
 	background-color: var(--green);
 	border-radius: 1em;
 	padding: 1em;
-	/* width: 40%; */
 	width: 28em;
 	height: 10.5em;
-	/* text-align: justify; */
 }
 
 .avatar__text::after {
@@ -32,10 +30,9 @@
 	overflow: hidden;
 }
 
-
-
 .avatar__image {
 	object-fit: contain;
+	height: auto;
 }
 
 @media (max-width: 964px) {
@@ -52,23 +49,15 @@
 	.avatar__textContainer {
 		width: 26.3em;
 	}
-
-	.avatar__image{
-		height: 29em;
-	}
 }
 
 @media (max-width: 450px) {
-  .avatar__image,
+	.avatar__image,
 	.avatar__textContainer {
-    width: 17.5em;
-  }
+		width: 17.5em;
+	}
 
 	.avatar__textContainer {
 		height: 13em;
-  }
-
-	.avatar__image{
-		height: 21em;
 	}
 }
