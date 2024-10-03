@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-import styles from "./recipe.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faArrowLeft,
 	faArrowRight,
 	faShare,
 } from "@fortawesome/free-solid-svg-icons";
+import Background from "./background";
 import { shareRecipe } from "../../utils/shareUtils";
+
+import styles from "./recipe.module.css";
 
 interface RecipeProps {
 	recipeText: string;
@@ -26,13 +28,11 @@ const Recipe: React.FC<RecipeProps> = ({
 	const handleReturnClick = () => {
 		onReturn();
 		setIsReturnDisabled(true);
-		console.log("return button pressed");
 	};
 
 	const handleContinueClick = () => {
 		onContinue();
 		setIsReturnDisabled(false);
-		console.log("continue button pressed");
 	};
 
 	const handleShareClick = () => {
@@ -41,6 +41,7 @@ const Recipe: React.FC<RecipeProps> = ({
 
 	return (
 		<div className={styles.recipe}>
+			<Background />
 			<div className={styles.recipe__header}>
 				<h3 className={styles.recipe__title}>Recipe</h3>
 				<button

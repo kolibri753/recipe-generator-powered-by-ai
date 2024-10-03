@@ -12,20 +12,6 @@
 	margin-bottom: 1em;
 }
 
-.recipe::after {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-image: url("/images/recipe-bg.png");
-	background-repeat: repeat;
-	background-size: cover;
-	opacity: 0.4;
-	z-index: -1;
-}
-
 .recipe__header {
 	display: flex;
 	justify-content: space-between;
