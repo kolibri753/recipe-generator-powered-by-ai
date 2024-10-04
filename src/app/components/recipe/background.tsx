@@ -6,8 +6,9 @@ export default function Background() {
 		<Image
 			alt="Recipe"
 			src={recipeBg}
-			quality={100}
+			quality={50}
 			fill
+			priority
 			sizes="100vw"
 			style={{
 				objectFit: "cover",
