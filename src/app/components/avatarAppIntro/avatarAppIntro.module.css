@@ -9,7 +9,7 @@
 	border-radius: 1em;
 	padding: 1em;
 	width: 28em;
-	height: 10.5em;
+	height: 8em;
 }
 
 .avatar__text::after {
@@ -30,9 +30,14 @@
 	overflow: hidden;
 }
 
+.avatar__imageContainer {
+	position: relative;
+	width: 27.3em;
+	height: 30.25em;
+}
+
 .avatar__image {
 	object-fit: contain;
-	height: auto;
 }
 
 @media (max-width: 964px) {
@@ -45,19 +50,23 @@
 }
 
 @media (max-width: 530px) {
-	.avatar__image,
+	.avatar__imageContainer,
 	.avatar__textContainer {
 		width: 26.3em;
 	}
 }
 
 @media (max-width: 450px) {
-	.avatar__image,
+	.avatar__imageContainer,
 	.avatar__textContainer {
 		width: 17.5em;
 	}
 
+	.avatar__imageContainer {
+		height: 20em;
+	}
+
 	.avatar__textContainer {
-		height: 13em;
+		height: 14em;
 	}
 }
