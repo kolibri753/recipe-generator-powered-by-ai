@@ -44,8 +44,11 @@ const AvatarAppIntro = () => {
 					className={[styles.avatar__image, "non-draggable-img"].join(" ")}
 					src={avatar}
 					alt="Cool Avocado"
-					width={437.5}
-					height={500}
+					fill
+					sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+					priority
+					quality={75}
+					placeholder="empty"
 				/>
 			</div>
 		</div>
