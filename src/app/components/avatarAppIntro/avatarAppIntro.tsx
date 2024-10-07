@@ -1,43 +1,43 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./avatarAppIntro.module.css";
 import Image from "next/image";
-
+import Typewriter from "typewriter-effect";
 import avatar from "/public/images/avocado.png";
 
 const AvatarAppIntro = () => {
-	// State to control the typing animation
-	const [typedText, setTypedText] = useState("");
-	const introText =
-		"Welcome to FoodieMate AI! I'm your friendly kitchen companion here to help you explore a world of delightful recipes. Let's embark on a delicious journey together!";
-
-	useEffect(() => {
-		const typeText = () => {
-			const delay = 100;
-			let currentIndex = 0;
-
-			const typingInterval = setInterval(() => {
-				if (currentIndex < introText.length) {
-					setTypedText(introText.slice(0, currentIndex + 1));
-					currentIndex++;
-				} else {
-					clearInterval(typingInterval);
-				}
-			}, delay);
-		};
-
-		typeText();
-
-		return () => {
-			// Cleanup if needed
-		};
-	}, []);
+	const introText = [
+		"Welcome to FoodieMate AI! I'm your friendly kitchen companion here to help you explore a world of delightful recipes.",
+		"Step 1: Write down the ingredients you want to use.",
+		"Step 2: Press the 'Generate Recipe' button.",
+		"Step 3: Now it's my time to work! Sit back, relax, and watch the magic happen. Your delicious recipe will be ready in an instant!",
+	];
 
 	return (
 		<div className={styles.avatar}>
-			<div
-				className={[styles.avatar__textContainer, styles.avatar__thinking].join("")}
-			>
-				<p className={styles.avatar__text}>{typedText}</p>
+			<div className={styles.avatar__textContainer}>
+				<Typewriter
+					onInit={(typewriter) => {
+						typewriter
+							.typeString(introText[0])
+							.pauseFor(10000)
+							.deleteAll()
+							.typeString(introText[1])
+							.pauseFor(2000)
+							.deleteAll()
+							.typeString(introText[2])
+							.pauseFor(2000)
+							.deleteAll()
+							.typeString(introText[3])
+							.pauseFor(2000)
+							.start();
+					}}
+					options={{
+						autoStart: true,
+						loop: true,
+						delay: 75,
+						wrapperClassName: styles.avatar__text,
+					}}
+				/>
 			</div>
 			<div className={styles.avatar__imageContainer}>
 				<Image
