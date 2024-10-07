@@ -5,15 +5,33 @@ import Typewriter from "typewriter-effect";
 import avatar from "/public/images/avocado.png";
 
 const AvatarAppIntro = () => {
-	const introText =
-		"Welcome to FoodieMate AI! I'm your friendly kitchen companion here to help you explore a world of delightful recipes. Let's embark on a delicious journey together!";
+	const introText = [
+		"Welcome to FoodieMate AI! I'm your friendly kitchen companion here to help you explore a world of delightful recipes.",
+		"Step 1: Write down the ingredients you want to use.",
+		"Step 2: Press the 'Generate Recipe' button.",
+		"Step 3: Now it's my time to work! Sit back, relax, and watch the magic happen. Your delicious recipe will be ready in an instant!",
+	];
 
 	return (
 		<div className={styles.avatar}>
 			<div className={styles.avatar__textContainer}>
 				<Typewriter
+					onInit={(typewriter) => {
+						typewriter
+							.typeString(introText[0])
+							.pauseFor(10000)
+							.deleteAll()
+							.typeString(introText[1])
+							.pauseFor(2000)
+							.deleteAll()
+							.typeString(introText[2])
+							.pauseFor(2000)
+							.deleteAll()
+							.typeString(introText[3])
+							.pauseFor(2000)
+							.start();
+					}}
 					options={{
-						strings: [introText],
 						autoStart: true,
 						loop: true,
 						delay: 75,
