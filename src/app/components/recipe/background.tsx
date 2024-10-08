@@ -1,9 +1,10 @@
 import Image from "next/image";
-import recipeBg from "/public/images/recipe-bg.png";
+import recipeBg from "/public/images/recipe-bg.avif";
 
 export default function Background() {
 	return (
 		<Image
+			className="non-draggable-img"
 			alt="Recipe"
 			src={recipeBg}
 			quality={50}
