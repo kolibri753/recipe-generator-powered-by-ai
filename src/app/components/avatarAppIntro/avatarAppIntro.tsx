@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./avatarAppIntro.module.css";
 import Image from "next/image";
 import Typewriter from "typewriter-effect";
-import avatar from "/public/images/avocado.png";
+import avatar from "/public/images/avocado.avif";
 
 const AvatarAppIntro = () => {
 	const introText = [
@@ -45,10 +45,9 @@ const AvatarAppIntro = () => {
 					src={avatar}
 					alt="Cool Avocado"
 					fill
-					sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+					sizes="(max-width: 425px) 280px, (max-width: 1024px) 440px, (max-width: 1440px) 500px, 100vw"
 					priority
 					quality={75}
-					placeholder="empty"
 				/>
 			</div>
 		</div>
