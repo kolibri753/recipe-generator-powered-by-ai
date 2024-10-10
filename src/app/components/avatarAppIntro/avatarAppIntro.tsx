@@ -7,7 +7,7 @@ import avatar from "/public/images/avocado.avif";
 const AvatarAppIntro = () => {
 	const introText = [
 		"Welcome to FoodieMate AI! I'm your friendly kitchen companion here to help you explore a world of delightful recipes.",
-		"Step 1: Write down the ingredients you want to use.",
+		"Step 1: Write your ingredients. Suggestions will appear as you type, and you can press 'Tab' to add them quickly.",
 		"Step 2: Press the 'Generate Recipe' button.",
 		"Step 3: Now it's my time to work! Sit back, relax, and watch the magic happen. Your delicious recipe will be ready in an instant!",
 	];
@@ -19,7 +19,7 @@ const AvatarAppIntro = () => {
 					onInit={(typewriter) => {
 						typewriter
 							.typeString(introText[0])
-							.pauseFor(10000)
+							.pauseFor(5000)
 							.deleteAll()
 							.typeString(introText[1])
 							.pauseFor(2000)
