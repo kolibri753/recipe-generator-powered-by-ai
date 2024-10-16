@@ -29,10 +29,11 @@ const SearchBar: React.FC<SearchBarProps> = ({
 		<div className={styles.searchBar}>
 			<CreatableSelect
 				isMulti
+				aria-label="Enter or choose ingredients"
 				value={ingredients}
 				onChange={(newValue) => setIngredients(newValue as IngredientOption[])}
 				options={suggestions}
-				placeholder="Enter ingredients..."
+				placeholder="Enter or choose ingredients..."
 				className="basic-multi-select"
 				classNamePrefix="select"
 				theme={(theme) => customTheme(theme, themeMode)}
