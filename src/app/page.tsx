@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { useTheme } from "next-themes";
 import AvatarAppIntro from "./components/avatarAppIntro/avatarAppIntro";
 import Recipe from "./components/recipe/recipe";
 import SearchBar from "./components/searchBar/searchBar";
@@ -21,7 +20,6 @@ export default function Home() {
 	const [continueRecipe, setContinueRecipe] = useState<string>("");
 	const [isLoading, setIsLoading] = useState(false);
 	const [showInitialRecipe, setShowInitialRecipe] = useState(true);
-	const { resolvedTheme } = useTheme();
 
 	const handleSearch = async () => {
 		setIsLoading(true);
@@ -62,7 +60,6 @@ export default function Home() {
 				setIngredients={setIngredients}
 				onSearch={handleSearch}
 				suggestions={suggestions}
-				themeMode={resolvedTheme === "dark" ? "dark" : "light"}
 			/>
 			<section className={styles.middle}>
 				<AvatarAppIntro />

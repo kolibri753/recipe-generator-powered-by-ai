@@ -1,9 +1,13 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
 import CreatableSelect from "react-select/creatable";
-import styles from "./searchBar.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faReceipt } from "@fortawesome/free-solid-svg-icons";
 import { customTheme } from "./themeConfig";
+import { useTheme } from "next-themes";
+
+import styles from "./searchBar.module.css";
 
 interface IngredientOption {
 	label: string;
@@ -15,7 +19,6 @@ interface SearchBarProps {
 	setIngredients: React.Dispatch<React.SetStateAction<IngredientOption[]>>;
 	onSearch: () => void;
 	suggestions: IngredientOption[];
-	themeMode: "light" | "dark";
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({
@@ -23,8 +26,21 @@ const SearchBar: React.FC<SearchBarProps> = ({
 	setIngredients,
 	onSearch,
 	suggestions,
-	themeMode,
 }) => {
+	const { resolvedTheme } = useTheme();
+	const [mounted, setMounted] = useState(false);
+
+	useEffect(() => {
+		setMounted(true);
+	}, []);
+
+	if (!mounted) {
+		return null;
+	}
+
+	const themeMode: "light" | "dark" =
+		resolvedTheme === "dark" ? "dark" : "light";
+
 	return (
 		<div className={styles.searchBar}>
 			<CreatableSelect
