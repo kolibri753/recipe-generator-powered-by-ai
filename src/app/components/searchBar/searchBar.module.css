@@ -1,5 +1,6 @@
 .searchBar {
 	display: flex;
+	gap: 1em;
 	align-self: center;
 	align-items: center;
 	justify-content: space-between;
@@ -17,13 +18,6 @@
 	color: var(--white);
 }
 
-.searchBar__input {
-	font-size: 1em;
-	padding: 0.5em;
-	border: 1px solid var(--dark-grey);
-	border-radius: 0.8em;
-}
-
 .searchBar__button {
 	max-height: 3.3em;
 	font-size: 1em;
@@ -35,12 +29,6 @@
 	cursor: pointer;
 	display: flex;
 	align-items: center;
-}
-
-.searchBar__suggestion {
-	position: absolute;
-	top: 0;
-	right: 0;
 }
 
 .button__text {
@@ -59,10 +47,6 @@
 		margin-top: 43em;
 		width: 45em;
 	}
-
-	.searchBar__input {
-		width: 30em;
-	}
 }
 
 @media (max-width: 770px) {
@@ -77,10 +61,6 @@
 		width: 35em;
 		gap: 1em;
 	}
-
-	.searchBar__input {
-		width: 100%;
-	}
 }
 
 @media (max-width: 530px) {
@@ -90,19 +70,11 @@
 		gap: 0.8em;
 		width: 30em;
 	}
-
-	.searchBar__input {
-		width: 100%;
-	}
 }
 
 @media (max-width: 450px) {
 	.searchBar {
 		margin-top: 40em;
 		width: 20em;
-	}
-
-	.searchBar__input {
-		font-size: 0.9em;
 	}
 }

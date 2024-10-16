@@ -24,6 +24,7 @@
     "next-themes": "^0.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-select": "^5.8.1",
     "sharp": "^0.33.5",
     "typescript": "5.2.2",
     "typewriter-effect": "^2.21.0"
