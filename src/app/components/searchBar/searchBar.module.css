@@ -22,7 +22,7 @@
 	max-height: 3.3em;
 	font-size: 1em;
 	background-color: var(--orange);
-	color: var(--white);
+	color: var(--text-color);
 	padding: 0.5em 1em;
 	border: none;
 	border-radius: 0.8em;

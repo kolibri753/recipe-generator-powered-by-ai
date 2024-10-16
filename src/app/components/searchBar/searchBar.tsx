@@ -34,26 +34,24 @@ const SearchBar: React.FC<SearchBarProps> = ({
 		setMounted(true);
 	}, []);
 
-	if (!mounted) {
-		return null;
-	}
-
 	const themeMode: "light" | "dark" =
 		resolvedTheme === "dark" ? "dark" : "light";
 
 	return (
 		<div className={styles.searchBar}>
-			<CreatableSelect
-				isMulti
-				aria-label="Enter or choose ingredients"
-				value={ingredients}
-				onChange={(newValue) => setIngredients(newValue as IngredientOption[])}
-				options={suggestions}
-				placeholder="Enter or choose ingredients..."
-				className="basic-multi-select"
-				classNamePrefix="select"
-				theme={(theme) => customTheme(theme, themeMode)}
-			/>
+			{mounted && (
+				<CreatableSelect
+					isMulti
+					aria-label="Enter or choose ingredients"
+					value={ingredients}
+					onChange={(newValue) => setIngredients(newValue as IngredientOption[])}
+					options={suggestions}
+					placeholder="Enter or choose ingredients..."
+					className="basic-multi-select"
+					classNamePrefix="select"
+					theme={(theme) => customTheme(theme, themeMode)}
+				/>
+			)}
 			<button onClick={onSearch} className={styles.searchBar__button}>
 				<span className={styles.button__text}>Generate Recipe</span>
 				<FontAwesomeIcon icon={faReceipt} size="2x" />
