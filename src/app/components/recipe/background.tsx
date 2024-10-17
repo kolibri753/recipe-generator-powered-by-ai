@@ -14,6 +14,7 @@ export default function Background() {
 			style={{
 				objectFit: "cover",
 				opacity: "0.4",
+				zIndex: -1,
 			}}
 		/>
 	);
