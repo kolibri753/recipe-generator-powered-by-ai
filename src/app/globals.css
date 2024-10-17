@@ -11,12 +11,12 @@
 	--green: #7cb342;
 }
 
-[data-theme="light"] {
+html.light {
 	--background-color: var(--light-grey);
 	--text-color: var(--dark-grey);
 }
 
-[data-theme="dark"] {
+html.dark {
 	--background-color: var(--black);
 	--text-color: var(--white);
 }
