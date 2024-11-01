@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import styles from "./avatarAppIntro.module.css";
 import Image from "next/image";

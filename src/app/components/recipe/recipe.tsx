@@ -1,20 +1,16 @@
-import React from "react";
+"use client";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShare } from "@fortawesome/free-solid-svg-icons";
+import { useRecipeStore } from "@/app/store";
+import { shareRecipe } from "@/app/utils/shareUtils";
 import Background from "./background";
-import { shareRecipe } from "../../utils/shareUtils";
 
 import styles from "./recipe.module.css";
 
-interface RecipeProps {
-	recipeText: string;
-	isLoading: boolean;
-}
-
-const Recipe: React.FC<RecipeProps> = ({ recipeText, isLoading }) => {
-	const handleShareClick = () => {
-		shareRecipe(recipeText);
-	};
+const Recipe: React.FC = () => {
+	const { recipe, isLoading } = useRecipeStore();
+	const handleShareClick = () => shareRecipe(recipe);
 
 	return (
 		<div className={styles.recipe}>
@@ -22,24 +18,19 @@ const Recipe: React.FC<RecipeProps> = ({ recipeText, isLoading }) => {
 			<div className={styles.recipe__header}>
 				<h3 className={styles.recipe__title}>Recipe</h3>
 				<button
-					className={styles.recipe__btn}
 					onClick={handleShareClick}
-					disabled={isLoading}
+					className={styles.recipe__btn}
+					disabled={!recipe}
 				>
-					Share
-					<FontAwesomeIcon icon={faShare} />
+					Share <FontAwesomeIcon icon={faShare} />
 				</button>
 			</div>
-			{recipeText ? (
-				<p className={styles.recipe__desc}>
-					{isLoading ? "Generating recipe..." : recipeText}
-				</p>
-			) : (
-				<p className={styles.recipe__desc}>
-					Write down your favorite ingredients and click the Generate button, and
-					like magic, your custom recipe will appear right here! 🍳🧁✨
-				</p>
-			)}
+			<p className={styles.recipe__desc}>
+				{isLoading
+					? "Generating recipe..."
+					: recipe ||
+					  "Write down your favorite ingredients and click the Generate button, and like magic, your custom recipe will appear right here! 🍳🧁✨"}
+			</p>
 		</div>
 	);
 };
