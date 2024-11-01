@@ -18,9 +18,9 @@ interface IngredientOption {
 }
 
 const SearchBar: React.FC = () => {
-	const { ingredients, setIngredients, setRecipe, setLoading } =
-		useRecipeStore();
+	const { setRecipe, setLoading, isLoading } = useRecipeStore();
 	const { resolvedTheme } = useTheme();
+	const [ingredients, setIngredients] = useState<IngredientOption[]>([]);
 	const [mounted, setMounted] = useState(false);
 
 	useEffect(() => {
@@ -58,7 +58,11 @@ const SearchBar: React.FC = () => {
 					theme={(theme) => customTheme(theme, themeMode)}
 				/>
 			)}
-			<button onClick={handleGenerate} className={styles.searchBar__button}>
+			<button
+				onClick={handleGenerate}
+				className={styles.searchBar__button}
+				disabled={isLoading || ingredients.length === 0}
+			>
 				<span>Generate Recipe</span>
 				<FontAwesomeIcon icon={faReceipt} size="2x" />
 			</button>
