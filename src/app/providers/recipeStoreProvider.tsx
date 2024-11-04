@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useRef, ReactNode } from "react";
 import { useStore } from "zustand";
-import { RecipeStore, createRecipeStore } from "@/app/store";
+import { RecipeStore, createRecipeStore } from "@/app/stores/recipeStore";
 
 type RecipeStoreApi = ReturnType<typeof createRecipeStore>;
 
