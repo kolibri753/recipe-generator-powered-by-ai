@@ -5,7 +5,7 @@ import CreatableSelect from "react-select/creatable";
 import { useTheme } from "next-themes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faReceipt } from "@fortawesome/free-solid-svg-icons";
-import { useRecipeStore } from "@/app/store";
+import { useRecipeStore } from "@/app/providers/recipeStoreProvider";
 import { generateText } from "@/app/ai-api/huggingface";
 import { suggestions } from "@/app/utils/suggestions";
 import { customTheme } from "./themeConfig";
@@ -18,7 +18,9 @@ interface IngredientOption {
 }
 
 const SearchBar: React.FC = () => {
-	const { setRecipe, setLoading, isLoading } = useRecipeStore();
+	const setRecipe = useRecipeStore((state) => state.setRecipe);
+	const setLoading = useRecipeStore((state) => state.setLoading);
+	const isLoading = useRecipeStore((state) => state.isLoading);
 	const { resolvedTheme } = useTheme();
 	const [ingredients, setIngredients] = useState<IngredientOption[]>([]);
 	const [mounted, setMounted] = useState(false);

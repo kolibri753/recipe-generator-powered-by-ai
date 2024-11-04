@@ -2,14 +2,16 @@
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShare } from "@fortawesome/free-solid-svg-icons";
-import { useRecipeStore } from "@/app/store";
+import { useRecipeStore } from "@/app/providers/recipeStoreProvider";
 import { shareRecipe } from "@/app/utils/shareUtils";
 import Background from "./background";
 
 import styles from "./recipe.module.css";
 
 const Recipe: React.FC = () => {
-	const { recipe, isLoading } = useRecipeStore();
+	const recipe = useRecipeStore((state) => state.recipe);
+	const isLoading = useRecipeStore((state) => state.isLoading);
+
 	const handleShareClick = () => shareRecipe(recipe);
 
 	return (

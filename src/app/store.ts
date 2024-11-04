@@ -1,15 +1,28 @@
-import { create } from "zustand";
+import { createStore } from "zustand/vanilla";
 
-interface RecipeStore {
+export interface RecipeStoreState {
 	recipe: string;
 	isLoading: boolean;
+}
+
+export interface RecipeStoreActions {
 	setRecipe: (recipe: string) => void;
 	setLoading: (isLoading: boolean) => void;
 }
 
-export const useRecipeStore = create<RecipeStore>((set) => ({
+export type RecipeStore = RecipeStoreState & RecipeStoreActions;
+
+const defaultInitState: RecipeStoreState = {
 	recipe: "",
 	isLoading: false,
-	setRecipe: (recipe) => set({ recipe }),
-	setLoading: (isLoading) => set({ isLoading }),
-}));
+};
+
+export const createRecipeStore = (
+	initState: RecipeStoreState = defaultInitState
+) => {
+	return createStore<RecipeStore>((set) => ({
+		...initState,
+		setRecipe: (recipe) => set({ recipe }),
+		setLoading: (isLoading) => set({ isLoading }),
+	}));
+};
