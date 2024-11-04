@@ -29,15 +29,10 @@
 	flex-grow: 1;
 	text-align: justify;
 	font-size: 1.2em;
+	white-space: pre-line;
 }
 
-.recipe__buttons {
-	display: flex;
-	justify-content: space-between;
-	margin-top: 0.5em;
-}
-
-.recipe__button {
+.recipe__btn {
 	font-size: 1.2em;
 	display: flex;
 	align-items: center;
@@ -48,13 +43,14 @@
 	border: none;
 	border-radius: 0.5em;
 	cursor: pointer;
+	transition: background-color 0.3s ease;
 }
 
-.recipe__button:hover {
+.recipe__btn:hover {
 	background-color: var(--brown);
 }
 
-.recipe__button:disabled {
+.recipe__btn:disabled {
 	opacity: 0.6;
 	cursor: not-allowed;
 	background-color: var(--brown);
@@ -77,9 +73,5 @@
 @media (max-width: 450px) {
 	.recipe {
 		width: 17.5em;
-	}
-
-	.recipe__buttons {
-		font-size: 15px;
 	}
 }

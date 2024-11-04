@@ -1,43 +1,18 @@
-import React, { useState } from "react";
+"use client";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-	faArrowLeft,
-	faArrowRight,
-	faShare,
-} from "@fortawesome/free-solid-svg-icons";
+import { faShare } from "@fortawesome/free-solid-svg-icons";
+import { useRecipeStore } from "@/app/providers/recipeStoreProvider";
+import { shareRecipe } from "@/app/utils/shareUtils";
 import Background from "./background";
-import { shareRecipe } from "../../utils/shareUtils";
 
 import styles from "./recipe.module.css";
 
-interface RecipeProps {
-	recipeText: string;
-	isLoading: boolean;
-	onContinue: () => void;
-	onReturn: () => void;
-}
+const Recipe: React.FC = () => {
+	const recipe = useRecipeStore((state) => state.recipe);
+	const isLoading = useRecipeStore((state) => state.isLoading);
 
-const Recipe: React.FC<RecipeProps> = ({
-	recipeText,
-	isLoading,
-	onContinue,
-	onReturn,
-}) => {
-	const [isReturnDisabled, setIsReturnDisabled] = useState(true);
-
-	const handleReturnClick = () => {
-		onReturn();
-		setIsReturnDisabled(true);
-	};
-
-	const handleContinueClick = () => {
-		onContinue();
-		setIsReturnDisabled(false);
-	};
-
-	const handleShareClick = () => {
-		shareRecipe(recipeText);
-	};
+	const handleShareClick = () => shareRecipe(recipe);
 
 	return (
 		<div className={styles.recipe}>
@@ -45,42 +20,19 @@ const Recipe: React.FC<RecipeProps> = ({
 			<div className={styles.recipe__header}>
 				<h3 className={styles.recipe__title}>Recipe</h3>
 				<button
-					className={[styles.recipe__button, styles.btn__share].join(" ")}
 					onClick={handleShareClick}
-					disabled={isLoading}
+					className={styles.recipe__btn}
+					disabled={!recipe}
 				>
-					Share
-					<FontAwesomeIcon icon={faShare} />
+					Share <FontAwesomeIcon icon={faShare} />
 				</button>
 			</div>
-			{recipeText ? (
-				<p className={styles.recipe__desc} style={{ whiteSpace: "pre-line" }}>
-					{isLoading ? "Generating recipe..." : recipeText}
-				</p>
-			) : (
-				<p className={styles.recipe__desc}>
-					Write down your favorite ingredients and click the Generate button, and
-					like magic, your custom recipe will appear right here! 🍳🧁✨
-				</p>
-			)}
-			<div className={styles.recipe__buttons}>
-				<button
-					className={styles.recipe__button}
-					onClick={handleReturnClick}
-					disabled={isLoading || isReturnDisabled}
-				>
-					<FontAwesomeIcon icon={faArrowLeft} />
-					Return
-				</button>
-				<button
-					className={styles.recipe__button}
-					onClick={handleContinueClick}
-					disabled={isLoading || !isReturnDisabled}
-				>
-					<FontAwesomeIcon icon={faArrowRight} />
-					Continue
-				</button>
-			</div>
+			<p className={styles.recipe__desc}>
+				{isLoading
+					? "Generating recipe..."
+					: recipe ||
+					  "Write down your favorite ingredients and click the Generate button, and like magic, your custom recipe will appear right here! 🍳🧁✨"}
+			</p>
 		</div>
 	);
 };

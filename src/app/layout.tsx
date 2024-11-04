@@ -1,7 +1,8 @@
 import React from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Providers from "./providers/providers";
+import ThemeProviders from "./providers/themeProviders";
+import { RecipeStoreProvider } from "./providers/recipeStoreProvider";
 import "./globals.css";
 import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
@@ -25,11 +26,11 @@ export default function RootLayout({
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<body className={inter.className}>
-				<Providers>
+				<ThemeProviders>
 					<Header />
-					{children}
+					<RecipeStoreProvider>{children}</RecipeStoreProvider>
 					<Footer />
-				</Providers>
+				</ThemeProviders>
 			</body>
 		</html>
 	);

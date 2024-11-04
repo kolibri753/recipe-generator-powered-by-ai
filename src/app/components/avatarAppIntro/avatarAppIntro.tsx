@@ -1,8 +1,9 @@
 import React from "react";
-import styles from "./avatarAppIntro.module.css";
 import Image from "next/image";
-import Typewriter from "typewriter-effect";
 import avatar from "/public/images/avocado.avif";
+import TypewriterWrapper from "./typewriterWrapper";
+
+import styles from "./avatarAppIntro.module.css";
 
 const AvatarAppIntro = () => {
 	const introText = [
@@ -15,29 +16,7 @@ const AvatarAppIntro = () => {
 	return (
 		<div className={styles.avatar}>
 			<div className={styles.avatar__textContainer}>
-				<Typewriter
-					onInit={(typewriter) => {
-						typewriter
-							.typeString(introText[0])
-							.pauseFor(5000)
-							.deleteAll()
-							.typeString(introText[1])
-							.pauseFor(2000)
-							.deleteAll()
-							.typeString(introText[2])
-							.pauseFor(2000)
-							.deleteAll()
-							.typeString(introText[3])
-							.pauseFor(2000)
-							.start();
-					}}
-					options={{
-						autoStart: true,
-						loop: true,
-						delay: 75,
-						wrapperClassName: styles.avatar__text,
-					}}
-				/>
+				<TypewriterWrapper text={introText} className={styles.avatar__text} />
 			</div>
 			<div className={styles.avatar__imageContainer}>
 				<Image
