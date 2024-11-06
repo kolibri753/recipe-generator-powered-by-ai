@@ -57,6 +57,7 @@ const SearchBar: React.FC = () => {
 					placeholder="Enter or choose ingredients..."
 					className="basic-multi-select"
 					classNamePrefix="select"
+					aria-label="Ingredients selection"
 					theme={(theme) => customTheme(theme, themeMode)}
 				/>
 			)}

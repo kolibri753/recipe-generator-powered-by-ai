@@ -1,52 +1,52 @@
 .theme__switcher {
-  width: 4.2em;
-  height: 2.1em;
-  background-color: var(--green);
-  border-radius: 2.1em;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: background-color 0.3s ease;
+	width: 4.2em;
+	height: 2.1em;
+	background-color: var(--green);
+	border-radius: 2.1em;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+	transition: background-color 0.3s ease;
 
-  .theme__icon {
-    color: var(--orange);
-  }
+	.theme__icon {
+		color: var(--orange);
+	}
 }
 
 .theme__slider {
-  width: 2.1em;
-  height: 2.1em;
-  background-color: var(--dark-grey);
-  border: 1px solid var(--dark-grey);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--dark-grey);
-  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease,
-    left 0.3s ease;
-  position: absolute;
-  left: 0;
+	width: 2.1em;
+	height: 2.1em;
+	background-color: var(--dark-grey);
+	border: 1px solid var(--dark-grey);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--dark-grey);
+	transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease,
+		left 0.3s ease;
+	position: absolute;
+	left: 0;
 }
 
 .theme__icon {
-  height: 1em;
-  width: 1em;
+	height: 1em;
+	width: 1em;
 }
 
 .darkMode .theme__switcher {
-  background-color: var(--light-grey);
-  transition: background-color 0.3s ease;
+	background-color: var(--light-grey);
+	transition: background-color 0.3s ease;
 }
 
 .darkMode .theme__slider {
-  background-color: var(--light-grey);
-  color: var(--light-grey);
-  transform: translateX(2.1em);
+	background-color: var(--light-grey);
+	color: var(--light-grey);
+	transform: translateX(2.1em);
 }
 
 .darkMode .theme__icon {
-  color: var(--orange);
+	color: var(--orange);
 }
