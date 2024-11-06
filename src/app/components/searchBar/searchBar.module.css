@@ -29,6 +29,17 @@
 	cursor: pointer;
 	display: flex;
 	align-items: center;
+	transition: filter 0.3s ease;
+}
+
+.searchBar__button:hover {
+	filter: brightness(90%);
+}
+
+.searchBar__button:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+	color: var(--dark-grey);
 }
 
 .button__text {
