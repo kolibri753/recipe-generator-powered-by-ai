@@ -1,8 +1,8 @@
 import { HfInference } from "@huggingface/inference";
 
-const hf = new HfInference(process.env.HUGGINGFACE_API);
+const hf = new HfInference(process.env.HF_API_KEY);
 
-export async function generateText(ingredients: string) {
+async function generateText(ingredients: string) {
 	try {
 		const prompt = ingredients;
 
@@ -23,3 +23,5 @@ export async function generateText(ingredients: string) {
 		return null;
 	}
 }
+
+export { generateText };

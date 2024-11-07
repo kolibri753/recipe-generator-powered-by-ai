@@ -1,12 +1,10 @@
 import React from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import ThemeProviders from "./providers/themeProviders";
-import { RecipeStoreProvider } from "./providers/recipeStoreProvider";
 import "./globals.css";
+import { RecipeStoreProvider, ThemeProviders } from "./providers/providers";
 import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
-
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;

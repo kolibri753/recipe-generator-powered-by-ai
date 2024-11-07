@@ -1,4 +1,4 @@
-export const customTheme = (theme: any, themeMode: "light" | "dark") => ({
+const customTheme = (theme: any, themeMode: "light" | "dark") => ({
 	...theme,
 	colors: {
 		...theme.colors,
@@ -13,3 +13,5 @@ export const customTheme = (theme: any, themeMode: "light" | "dark") => ({
 		neutral30: "var(--light-grey)",
 	},
 });
+
+export { customTheme };

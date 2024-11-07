@@ -5,12 +5,12 @@ import CreatableSelect from "react-select/creatable";
 import { useTheme } from "next-themes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faReceipt } from "@fortawesome/free-solid-svg-icons";
-import { useRecipeStore } from "@/app/providers/recipeStoreProvider";
-import { generateText } from "@/app/ai-api/huggingface";
-import { suggestions } from "@/app/utils/suggestions";
-import { customTheme } from "./themeConfig";
+import { useRecipeStore } from "@/app/providers/recipe-store/recipe-store.provider";
+import { generateText } from "@/app/libs/api/huggingface/generate-text";
+import { getSuggestions } from "@/app/helpers/helpers";
+import { customTheme } from "./theme-config";
 
-import styles from "./searchBar.module.css";
+import styles from "./styles.module.css";
 
 interface IngredientOption {
 	label: string;
@@ -53,7 +53,7 @@ const SearchBar: React.FC = () => {
 					onChange={(newIngredients) =>
 						setIngredients(newIngredients as IngredientOption[])
 					}
-					options={suggestions}
+					options={getSuggestions}
 					placeholder="Enter or choose ingredients..."
 					className="basic-multi-select"
 					classNamePrefix="select"

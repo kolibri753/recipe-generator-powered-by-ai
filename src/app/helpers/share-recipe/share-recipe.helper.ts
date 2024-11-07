@@ -1,4 +1,4 @@
-export async function shareRecipe(recipeText: string) {
+async function shareRecipe(recipeText: string) {
 	if (recipeText) {
 		// Check if the Web Share API is available
 		if (navigator.share) {
@@ -26,3 +26,5 @@ export async function shareRecipe(recipeText: string) {
 		}
 	}
 }
+
+export { shareRecipe };

@@ -1,10 +1,11 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import styles from "./themeChangerBtn.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCarrot, faCookie } from "@fortawesome/free-solid-svg-icons";
 import { useTheme } from "next-themes";
+
+import styles from "./styles.module.css";
 
 const ThemeChangerBtn = () => {
 	const { setTheme, resolvedTheme } = useTheme();
