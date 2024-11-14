@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import avatar from "/public/images/avocado.avif";
-import TypewriterWrapper from "./typewriterWrapper";
+import TypewriterWrapper from "./typewriter-wrapper";
 
-import styles from "./avatarAppIntro.module.css";
+import styles from "./styles.module.css";
 
 const AvatarAppIntro = () => {
 	const introText = [

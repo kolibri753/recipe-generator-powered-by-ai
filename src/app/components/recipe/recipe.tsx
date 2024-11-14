@@ -2,11 +2,11 @@
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShare } from "@fortawesome/free-solid-svg-icons";
-import { useRecipeStore } from "@/app/providers/recipeStoreProvider";
-import { shareRecipe } from "@/app/utils/shareUtils";
+import { useRecipeStore } from "@/app/providers/recipe-store/recipe-store.provider";
+import { shareRecipe } from "@/app/helpers/helpers";
 import Background from "./background";
 
-import styles from "./recipe.module.css";
+import styles from "./styles.module.css";
 
 const Recipe: React.FC = () => {
 	const recipe = useRecipeStore((state) => state.recipe);

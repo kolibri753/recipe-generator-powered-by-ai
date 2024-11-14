@@ -1,14 +1,11 @@
 import React from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import ThemeProviders from "./providers/themeProviders";
-import { RecipeStoreProvider } from "./providers/recipeStoreProvider";
-import "./globals.css";
-import Header from "./components/header/header";
-import Footer from "./components/footer/footer";
-
+import { RecipeStoreProvider, ThemeProviders } from "./providers/providers";
+import { Header, Footer } from "./components/components";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+import "./globals.css";
 config.autoAddCss = false;
 
 const inter = Inter({ subsets: ["latin"] });

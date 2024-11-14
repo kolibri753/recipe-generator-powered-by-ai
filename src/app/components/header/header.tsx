@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "./header.module.css";
 import Image from "next/image";
-import ThemeChangerBtn from "../themeChangerBtn/themeChangerBtn";
-
+import ThemeChangerBtn from "../theme-changer-btn/theme-changer-btn";
 import logo from "/public/images/logo.png";
+
+import styles from "./styles.module.css";
 
 const Header = () => {
 	return (

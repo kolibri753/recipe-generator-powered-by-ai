@@ -71,7 +71,9 @@ const ingredientNames = [
 	"frozen mixed vegetables",
 ];
 
-export const suggestions = ingredientNames.map((name) => ({
+const getSuggestions = ingredientNames.map((name) => ({
 	label: name,
 	value: name,
 }));
+
+export { getSuggestions };

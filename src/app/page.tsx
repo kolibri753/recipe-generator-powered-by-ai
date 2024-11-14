@@ -1,6 +1,5 @@
-import AvatarAppIntro from "./components/avatarAppIntro/avatarAppIntro";
-import Recipe from "./components/recipe/recipe";
-import SearchBar from "./components/searchBar/searchBar";
+import { AvatarAppIntro, Recipe, SearchBar } from "./components/components";
+
 import styles from "./page.module.css";
 
 export default function Home() {

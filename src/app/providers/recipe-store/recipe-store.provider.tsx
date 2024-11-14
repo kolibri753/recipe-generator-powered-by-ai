@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useRef, ReactNode } from "react";
 import { useStore } from "zustand";
-import { RecipeStore, createRecipeStore } from "@/app/stores/recipeStore";
+import { RecipeStore, createRecipeStore } from "@/app/stores/recipe-store";
 
 type RecipeStoreApi = ReturnType<typeof createRecipeStore>;
 
@@ -12,7 +12,7 @@ interface RecipeStoreProviderProps {
 	children: ReactNode;
 }
 
-export const RecipeStoreProvider = ({ children }: RecipeStoreProviderProps) => {
+const RecipeStoreProvider = ({ children }: RecipeStoreProviderProps) => {
 	const storeRef = useRef<RecipeStoreApi>();
 
 	if (!storeRef.current) {
@@ -26,7 +26,7 @@ export const RecipeStoreProvider = ({ children }: RecipeStoreProviderProps) => {
 	);
 };
 
-export const useRecipeStore = <T,>(selector: (state: RecipeStore) => T): T => {
+const useRecipeStore = <T,>(selector: (state: RecipeStore) => T): T => {
 	const store = useContext(RecipeStoreContext);
 
 	if (!store) {
@@ -35,3 +35,5 @@ export const useRecipeStore = <T,>(selector: (state: RecipeStore) => T): T => {
 
 	return useStore(store, selector);
 };
+
+export { RecipeStoreProvider, useRecipeStore };
