@@ -1,6 +1,6 @@
 import { HfInference } from "@huggingface/inference";
 
-const hf = new HfInference(process.env.HF_API_KEY!);
+const hf = new HfInference(process.env.NEXT_PUBLIC_HF_API_KEY!);
 
 async function generateText(ingredients: string) {
 	try {
